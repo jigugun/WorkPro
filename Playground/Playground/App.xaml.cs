@@ -15,6 +15,8 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using System.Globalization;
+using System.Threading;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,7 +34,7 @@ namespace Playground
         /// </summary>
         public App()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();   
         }
 
         /// <summary>
@@ -42,10 +44,52 @@ namespace Playground
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
+            //set default language
+            SelectCulture("zh-CN");
+
+            //stating first window
             m_window = new MainWindow();
             m_window.Activate();
         }
 
         private Window m_window;
+
+        //select language culture
+        private static void SelectCulture(string culture)
+        {
+            if (string.IsNullOrEmpty(culture))
+            {
+                return;
+            }
+
+            //get all dictionaries into a list
+            var dictionaryList = Application.Current.Resources.MergedDictionaries.ToList();
+
+            //search for specified culture
+            string requestedCulture = string.Format("{0}.xaml", culture);
+            var resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString.Contains(requestedCulture));
+            if (resourceDictionary == null)
+            {
+                //if not found, then select default language
+                culture = "en-US";
+                requestedCulture = $"{culture}.xaml";
+                resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString.Contains(requestedCulture));
+            }
+
+            //if we have the requested resource, remove it from the list and place at the end
+            //then this language will be our string table to use
+            if (resourceDictionary != null)
+            {
+                Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);
+                Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
+            }
+
+            //inform the threads of the new culture
+            var cultureInfo = new CultureInfo(culture);
+            Thread.CurrentThread.CurrentCulture = cultureInfo;
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;
+        }
     }
 }
+
+

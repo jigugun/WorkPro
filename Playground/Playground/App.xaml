@@ -11,6 +11,7 @@
                 
                 <!--languages-->
                 <ResourceDictionary Source="Languages/en-US.xaml" />
+                <ResourceDictionary Source="Languages/zh-CN.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
         </ResourceDictionary>

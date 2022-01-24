@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Languages\en-US.xaml" />
+    <None Remove="Languages\zh-CN.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +42,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Languages\zh-CN.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Languages\en-US.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
