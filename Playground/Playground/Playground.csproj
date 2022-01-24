@@ -30,10 +30,19 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Languages\en-US.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Languages\en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

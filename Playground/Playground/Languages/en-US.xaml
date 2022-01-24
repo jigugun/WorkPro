@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Playground.Languages">
+
+    <!--app-->
+    <x:String x:Key="AppName">Playground</x:String>
+    <x:String x:Key="AppDisplayName">Playground</x:String>
+    <x:String x:Key="AppDescription">Playground for WorkPro</x:String>
+    
+    <!--general actions-->
+    <x:String x:Key="ActionYes">Yes</x:String>
+    <x:String x:Key="ActionNo">No</x:String>
+    <x:String x:Key="ActionCancel">Cancel</x:String>
+
+</ResourceDictionary>
