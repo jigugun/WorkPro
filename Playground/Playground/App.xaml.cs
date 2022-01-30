@@ -17,6 +17,8 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using System.Globalization;
 using System.Threading;
+using Microsoft.Extensions.Configuration;
+using Playground.Classes;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -35,6 +37,9 @@ namespace Playground
         public App()
         {
             this.InitializeComponent();   
+
+            //load json settings
+            LoadJsonSettings();
         }
 
         /// <summary>
@@ -88,6 +93,19 @@ namespace Playground
             var cultureInfo = new CultureInfo(culture);
             Thread.CurrentThread.CurrentCulture = cultureInfo;
             Thread.CurrentThread.CurrentUICulture = cultureInfo;
+        }
+
+        private void LoadJsonSettings()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables()
+                .Build();
+
+            var appSettings = config.GetSection(nameof(AppSettings)).Get<AppSettings>();
+     
+
+          Console.WriteLine(config.GetSection("settings"));
         }
     }
 }

@@ -12,5 +12,14 @@
     <x:String x:Key="ActionYes">Yes</x:String>
     <x:String x:Key="ActionNo">No</x:String>
     <x:String x:Key="ActionCancel">Cancel</x:String>
+    
+    <!--pane-->
+    <x:String x:Key="PaneHeaderSample">范例面板标题</x:String>
+    
+    <!--page titles-->
+    <x:String x:Key="PageHomeTitle">开始</x:String>
+    <x:String x:Key="PageHomeSeetings">设置</x:String>
+    
+    <!--page home-->
 
 </ResourceDictionary>

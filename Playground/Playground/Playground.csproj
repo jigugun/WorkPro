@@ -33,12 +33,30 @@
   <ItemGroup>
     <None Remove="Languages\en-US.xaml" />
     <None Remove="Languages\zh-CN.xaml" />
+    <None Remove="Pages\PageHome.xaml" />
+    <None Remove="Pages\PageSample.xaml" />
+    <None Remove="Pages\PageSettings.xaml" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
     <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Page Update="Pages\PageHome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Pages\PageSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +65,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Languages\en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\PageSample.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
