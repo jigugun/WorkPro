@@ -13,12 +13,23 @@
     <x:String x:Key="ActionNo">No</x:String>
     <x:String x:Key="ActionCancel">Cancel</x:String>
     
+    <!--main navigation view-->
+    <x:String x:Key="NaviMain"></x:String>
+    <x:String x:Key="NaviItemHome">首页</x:String>
+    <x:String x:Key="NaviItemSettings">设置</x:String>
+    <x:String x:Key="NaviItemAccount">账号</x:String>
+    <x:String x:Key="NaviItemHelp">帮助</x:String>
+    
     <!--pane-->
     <x:String x:Key="PaneHeaderSample">范例面板标题</x:String>
     
     <!--page titles-->
-    <x:String x:Key="PageHomeTitle">开始</x:String>
-    <x:String x:Key="PageHomeSeetings">设置</x:String>
+    <x:String x:Key="PageHomeTitle">首页</x:String>
+    <x:String x:Key="PageSettingsTitle">设置</x:String>
+    
+    <!--page description-->
+    <x:String x:Key="PageHomeDescription">欢迎使用ePro，请通过下方快速链接或左侧导航菜单进入系统功能页面。</x:String>
+    <x:String x:Key="PageSettingsDescription">查看系统信息或进行相关设置。</x:String>
     
     <!--page home-->
 

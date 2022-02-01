@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Playground.Classes
+﻿namespace Playground.Classes
 {
+    /// <summary>
+    /// AppSettings class is for read and write app settings info quickly
+    /// Settings info are stored in appsettings.json file
+    /// </summary>
     public class AppSettings
     {
         public string AuthorName { get; set; }

@@ -9,16 +9,12 @@
 
     <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageHomeTitle}" Style="{ThemeResource TitleTextBlockStyle}" />
 
-        <TextBlock Text="{StaticResource AppDescription}"/>
         <StackPanel Grid.Row="1">
-            <TextBlock Text="{}"/>
-            <TextBlock Text=""/>
+
+            <TextBlock Text="{StaticResource PageSettingsTitle}" Style="{ThemeResource TitleTextBlockStyle}" />
+            <TextBlock Text="{StaticResource PageSettingsDescription}" Style="{ThemeResource BodyTextBlockStyle}"/>
+            
         </StackPanel>
     </Grid>
 </Page>

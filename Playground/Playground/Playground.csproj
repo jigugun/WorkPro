@@ -11,6 +11,7 @@
     <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
     <PackageProjectUrl>https://iamx.work</PackageProjectUrl>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <StartupObject>Playground.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
@@ -33,6 +34,8 @@
   <ItemGroup>
     <None Remove="Languages\en-US.xaml" />
     <None Remove="Languages\zh-CN.xaml" />
+    <None Remove="Pages\PageAccount.xaml" />
+    <None Remove="Pages\PageHelp.xaml" />
     <None Remove="Pages\PageHome.xaml" />
     <None Remove="Pages\PageSample.xaml" />
     <None Remove="Pages\PageSettings.xaml" />
@@ -51,6 +54,15 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="MainWindow.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Update="Pages\PageHelp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Pages\PageAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Pages\PageHome.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

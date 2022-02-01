@@ -1,24 +1,10 @@
-﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using System.Globalization;
-using System.Threading;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.UI.Xaml;
 using Playground.Classes;
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Threading;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -36,7 +22,7 @@ namespace Playground
         /// </summary>
         public App()
         {
-            this.InitializeComponent();   
+            this.InitializeComponent();
 
             //load json settings
             LoadJsonSettings();
@@ -103,9 +89,9 @@ namespace Playground
                 .Build();
 
             var appSettings = config.GetSection(nameof(AppSettings)).Get<AppSettings>();
-     
 
-          Console.WriteLine(config.GetSection("settings"));
+
+            Console.WriteLine(config.GetSection("settings"));
         }
     }
 }

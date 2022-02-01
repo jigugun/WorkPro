@@ -7,10 +7,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     >
+   
+    <Grid>
+        <!--define row col-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
 
-    <StackPanel Orientation="Vertical">
-        <TextBlock Text="{StaticResource PageHomeTitle}" Style="{ThemeResource TitleTextBlockStyle}" />
-        <TextBlock Text="{StaticResource AppDescription}"/>
+        <!--page description-->
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+            <TextBlock Text="{StaticResource PageHomeTitle}" Style="{ThemeResource TitleTextBlockStyle}" />
+            <TextBlock Text="{StaticResource PageHomeDescription}" Style="{ThemeResource BodyTextBlockStyle}"/>
+        </StackPanel>
 
-    </StackPanel>
+        <!--functions grid-->
+        
+    </Grid>
+
 </Page>
